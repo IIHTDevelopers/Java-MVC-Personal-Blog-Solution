@@ -13,6 +13,7 @@
     <artifactId>springboot-personal-blog</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-personal-blog</name>
+    <packaging>war</packaging>
     <description>Personal Blog Spring Boot Application</description>
     <properties>
         <java.version>18</java.version> <!-- Set Java version to 18 -->
