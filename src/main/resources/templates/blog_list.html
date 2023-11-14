@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE>
+<html>
+  <head> 
+    <title>Personal Blogs</title>
+  </head>
+  <body>
+
+    <div class="topnav">
+      <a th:href="@{/}">Add Blog</a>
+      <a th:href="@{/blogs}">Personal Blogs</a>
+    </div>
+
+    <div class= "container">
+      <h2 > BLogs </h2>
+      <table id="table"> 
+        <tr>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Description</th>
+        </tr>
+        <tr th:each="blog: ${blogs}">
+          <td th:text="${blog.name}"></td>
+          <td th:text="${blog.title}"></td>
+          <td th:text="${blog.description}"></td>
+          <td> <a role="button" class="update" th:href="@{/(id = ${blog.id})}">Update</a> </td>
+          <td> <a role="button" class="update" th:href="@{/blogs/{id}(id = ${blog.id})}">Delete</a> </td>
+        </tr>
+      </table>
+    </div>
+    
+  </body>
+</html>

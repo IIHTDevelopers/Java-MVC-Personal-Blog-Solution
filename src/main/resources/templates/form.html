@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a th:href="@{/}">Add Blog</a>
+      <a th:href="@{/blogs}">Personal Blogs</a>
+    </div>
+    <div class="container">
+      <h2> Personal Blog Form </h2>
+      <form method="post" th:object="${blog}" th:action="@{/handleSubmit}">
+
+        <h5> Name :  <input type="text" placeholder="Name" th:field="*{name}">
+          <span style="color:red" th:errors="*{name}"> </span></h5><br>
+
+        <h5> Title :  <input type="text" placeholder="Title" th:field="*{title}">
+          <span style="color:red" th:errors="*{title}"> </span></h5><br>
+
+        <h5>Description :  <input type="text" placeholder="Description" th:field="*{description}">
+          <span style="color:red" th:errors="*{description}"> </span></h5><br>
+
+        <input type="hidden" th:field="*{id}">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+</body>
+</html>
